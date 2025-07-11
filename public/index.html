@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Venda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Barra lateral com as abas -->
+        <div class="sidebar">
+            <button class="tablink" onclick="openTab(event, 'calculator')">Calculadora</button>
+            <button class="tablink" onclick="openTab(event, 'salesList')">Vendas Registradas</button>
+        </div>
+
+        <!-- Conteúdo das abas -->
+        <div id="calculator" class="tabcontent">
+            <h1>Calculadora de Venda</h1>
+            <form id="calculatorForm">
+                <label for="clientName">Nome do Cliente:</label>
+                <input type="text" id="clientName" required>
+
+                <label for="saleAmount">Valor da Venda (R$):</label>
+                <input type="number" id="saleAmount" required>
+
+                <label for="immediateDiscount">Porcentagem Imediata (%):</label>
+                <input type="number" id="immediateDiscount" required>
+
+                <label for="installments">Número de Parcelas:</label>
+                <input type="number" id="installments" required>
+
+                <label for="installmentDiscount">Porcentagem por Parcela (%):</label>
+                <input type="number" id="installmentDiscount" required>
+
+                <label for="paymentMethod">Método de Pagamento:</label>
+                <select id="paymentMethod">
+                    <option value="cartao">Cartão</option>
+                    <option value="boleto">Boleto</option>
+                    <option value="pix">Pix</option>
+                </select>
+
+                <button type="submit">Calcular e Salvar</button>
+            </form>
+            <div id="result" class="result"></div>
+        </div>
+
+        <div id="salesList" class="tabcontent">
+            <h2>Vendas Registradas</h2>
+            <table id="salesTable">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Valor Total</th>
+                        <th>Porcentagem Imediata</th>
+                        <th>Parcelas</th>
+                        <th>Porcentagem por Parcela</th>
+                        <th>Valor Líquido</th>
+                        <th>Método de Pagamento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- As vendas salvas irão aparecer aqui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
